@@ -1,0 +1,25 @@
+{
+  "name": "webapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node ./bin/start",
+    "build": "next build",
+    "start": "cross-env NODE_ENV=production node ./bin/start"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "morgan": "~1.9.0",
+    "mysql": "^2.16.0",
+    "next": "^8.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
+}
