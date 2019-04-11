@@ -1,9 +1,4 @@
 import React from 'react';
-import {
-	BrowserRouter as Router,
-	Route,
-	Link
-} from 'react-router-dom';
 
 import Admin from '../webjs/pages/admin';
 import Home from '../webjs/pages/home';
@@ -28,7 +23,7 @@ class Index extends React.Component {
 	render() {
 		return (
 			<Admin onMenuChecked={this.handleMenuChecked} menuData={this.state.menuData}>
-				
+				homepage!
 			</Admin>
 		)
 	}
