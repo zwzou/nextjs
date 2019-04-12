@@ -1,16 +1,14 @@
 import React from 'react';
-
 import Admin from '../webjs/pages/admin';
-import Home from '../webjs/pages/home';
 
-class Index extends React.Component {
+class Demo extends React.Component {
 	render() {
 		return (
 			<Admin>
-				<Home />
+				<div style={{'padding': '100px'}}>demo2</div>
 			</Admin>
 		)
 	}
 }
 
-export default Index
+export default Demo;

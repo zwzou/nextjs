@@ -1,12 +1,30 @@
 import React from 'react';
+import Link from 'next/link';
+import { withRouter } from 'next/router';
 
 class Admin extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			menuData: [{
+				name: '表格增删改查',
+				path: '/learnsql'
+			}, {
+				name: 'demo2',
+				path: '/demo2'
+			}]
+		}
 	}
 
-	onMenuChecked(item) {
-		this.props.onMenuChecked(item);
+	componentDidMount () {
+		const setData = this.state.menuData.map((item) => {
+			item.active = false;
+			if (item.path === this.props.router.route) {
+				item.active = true;
+			}
+			return item;
+		});
+		this.setState({menuData: setData});
 	}
 
 	render() {
@@ -15,13 +33,13 @@ class Admin extends React.Component {
 				<div className="admin-top"></div>
 				<div className="admin-body">
 					<div className="menu-warp">
-						{this.props.menuData.map( (item) => {
+						{this.state.menuData.map( (item) => {
 							return (
-								<div className="item" key={item.name}
-									onClick={() => {this.onMenuChecked(item)}}
-								>
-									{item.name}
-								</div>
+								<Link href={`${item.path}`} key={item.name}>
+									<div className={['item', item.active ? 'active' : ''].join(' ')}>
+										{item.name}
+									</div>
+								</Link>								
 							)
 						})}
 					</div>
@@ -66,6 +84,9 @@ class Admin extends React.Component {
 						cursor: pointer;
 						font-size: 15px;
 					}
+					.menu-warp .item.active {
+						color: rgb(255, 208, 75);
+					}
 					.menu-warp .item:hover {
 						background: rgb(67, 74, 80);
 					}
@@ -81,4 +102,4 @@ class Admin extends React.Component {
 	}
 }
 
-export default Admin
+export default withRouter(Admin);

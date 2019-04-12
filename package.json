@@ -8,6 +8,7 @@
     "start": "cross-env NODE_ENV=production node ./bin/start"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",

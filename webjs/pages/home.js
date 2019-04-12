@@ -8,7 +8,7 @@ class Home extends React.Component {
 				<style jsx>{`
 					div {
 						font-size: 24px;
-						padding: 40px 50px;
+						padding: 100px;
 					}
 				`}</style>
 			</div>
