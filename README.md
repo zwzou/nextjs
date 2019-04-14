@@ -6,7 +6,7 @@ A next(react)+express+mysql demo
 `npm install`
 
 2.添加MySQL设置   
-`打开 /mysql/config.js文件，设置数据库的host、user、password、database。`
+`打开 /mysql/config.js文件，设置数据库的host、user、password、database以连接数据库。`
 
 3.运行项目  
 `npm run dev`
