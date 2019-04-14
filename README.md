@@ -1,5 +1,5 @@
 # nextjs
-A next(react)+express+mysql demo
+> A next(react)+express+mysql demo
 
 ##### 运行步骤：
 1.下载项目并进入根目录，初始化项目   
