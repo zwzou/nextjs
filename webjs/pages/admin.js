@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 
+import PlugPrompt from '../plugs/prompt';
+
 class Admin extends React.Component {
 	constructor(props) {
 		super(props);
@@ -45,6 +47,8 @@ class Admin extends React.Component {
 					</div>
 					<div className="slot-content">{this.props.children}</div>
 				</div>
+				<PlugPrompt />
+
 				<style jsx>{`
 					.plug-admin {
 						position: absolute;

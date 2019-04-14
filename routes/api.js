@@ -50,7 +50,7 @@ router.get('/getData', (req, res) => {
 	// 创建表
 	let sql = `CREATE TABLE IF NOT EXISTS person_data (
 		person_id INT UNSIGNED AUTO_INCREMENT,
-		name VARCHAR(5) NOT NULL,
+		name VARCHAR(10) NOT NULL,
 		sex VARCHAR(5),
 		age VARCHAR(5),
 		des VARCHAR(100),

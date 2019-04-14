@@ -56,19 +56,25 @@ class Sql extends React.Component {
 	onOpenDialog () {
 		this.setState({dialogVisible: true});
 		this.initFormData();
+
+		this.setState({dialogTitle: '新增'});
 	}
 
 	onConfirm () {
 		if (this.state.dialogTitle === '新增') {
 			let params = this.state.formData;
 			Axios.get('/api/addInfo', {params: params}).then((res) => {
-
+				if (res.data.success) {
+					// React.$prompt('新增成功！');
+				}
 			})
 		}
 		if (this.state.dialogTitle === '修改') {
 			let params = this.state.formData;
 			Axios.get('/api/modInfo', {params: params}).then((res) => {
-
+				if (res.data.success) {
+					React.$prompt('修改成功！');
+				}
 			})
 		}
 		this.getTableData();
@@ -95,6 +101,7 @@ class Sql extends React.Component {
 			Axios.get('/api/delInfo', {params: params}).then((res) => {
 				if (res.data.success) {
 					this.getTableData();
+					React.$prompt('删除成功！');
 				}
 			})
 		}
@@ -167,12 +174,12 @@ class Sql extends React.Component {
 						margin-bottom: 30px;
 					}
 					input {
-						border:1px solid #bbb;
                         height: 24px;
                         padding-left: 4px;
 					}
 					textarea,input {
 						width: 175px;
+						border:1px solid #bbb;
 					}
 					
 				`}</style>
@@ -217,7 +224,6 @@ class Sql extends React.Component {
 						padding: 6px 10px;
 						cursor: pointer;
 					}
-
 					
 				`}</style>
 			</Admin>

@@ -5,4 +5,4 @@ const sqlConfig = {
 	database: 'test'
 };
 
-module.exports = sqlConfig
+module.exports = sqlConfig;
